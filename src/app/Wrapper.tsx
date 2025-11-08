@@ -11,9 +11,10 @@ type TemplateComponent = () => ReactNode;
 type Props = {
     htmlStrings: string;
     templates: TemplateComponent[];
+    links?: string[]
 };
 
-export const Wrapper = ({ htmlStrings, templates }: Props) => {
+export const Wrapper = ({ htmlStrings, templates, links }: Props) => {
     const hostRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -22,10 +23,12 @@ export const Wrapper = ({ htmlStrings, templates }: Props) => {
         const shadow = hostRef.current.shadowRoot || hostRef.current.attachShadow({ mode: "open" });
         shadow.innerHTML = htmlStrings;
 
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = "/light.css";
-        shadow.appendChild(link);
+        links?.forEach((item) => {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = item;
+            shadow.appendChild(link);
+        })
 
         /* выполняем скрипты */
         templates.forEach((Tpl, idx) => {

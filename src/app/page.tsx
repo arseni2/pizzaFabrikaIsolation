@@ -11,7 +11,7 @@ export default function Home() {
                 <button className={"base-button--red"}>класс base-button--red в lightdom</button>
             </div>
 
-            <Wrapper templates={[Template]} htmlStrings={contactsPage}/>
+            <Wrapper links={['/light.css']} templates={[Template]} htmlStrings={contactsPage}/>
         </div>
     );
 }
