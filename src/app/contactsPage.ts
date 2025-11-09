@@ -131,6 +131,8 @@ td {
 }
 </style>
 
+<my-img src="https://cdpiz1.pizzasoft.ru/pizzafab/content/5/5072/image_6905fdbea1d78.jpg" alt="text"></my-img>
+
  <my-accordion title="название акк">
     <p>Это содержимое первого аккордеона.</p>
     <button>Кнопка внутри</button>

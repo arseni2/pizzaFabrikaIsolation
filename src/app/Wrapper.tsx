@@ -1,6 +1,7 @@
 "use client";
 import {ReactNode, useEffect, useRef} from "react";
 import "@/web-components/AccordionElement"
+import "@/web-components/Img"
 
 export function extractTemplateScript(template: () => ReactNode): string {
     const child = template()?.props.children;
